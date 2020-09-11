@@ -1,4 +1,4 @@
-######final
+
 '''shape detection using thresholding'''
 import cv2
 
@@ -6,10 +6,11 @@ font = cv2.FONT_HERSHEY_COMPLEX_SMALL
 
 '''COUNTING NUMBER OF SHAPES USING DICTIONARY'''
 count = dict()
-count['triangle'], count['rectangle'], count['square'], count['pentagon'], count['circle'] = 0, 0, 0, 0, 0
 
 cap = cv2.VideoCapture(0)
 while 1:
+
+    count['triangle'], count['rectangle'], count['square'], count['pentagon'], count['circle'] = 0, 0, 0, 0, 0
     ret, img = cap.read()
     frame = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 
@@ -56,12 +57,12 @@ while 1:
     if k == 32:
         break
 
-print("Count for shapes : ")
-print("Triangle : ", count['triangle'])
-print("Square : ", count['square'])
-print("Rectangle : ", count['rectangle'])
-print("Pentagon : ", count['pentagon'])
-print("Circle : ", count['circle'])
+    print("Count for shapes : ")
+    print("Triangle : ", count['triangle'])
+    print("Square : ", count['square'])
+    print("Rectangle : ", count['rectangle'])
+    print("Pentagon : ", count['pentagon'])
+    print("Circle : ", count['circle'])
 
 cap.release()
 cv2.destroyAllWindows()
